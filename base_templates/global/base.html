@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    {% include 'tarefas/partials/head.html' %}
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="task-app">
+            {% comment %} 
+                * block - É para que toda página que 'herdar'/'usar' esta forma/casca que é o base. O conteudo da página filha possa ser posicionado NESTE LOCAL
+                ?  [Dentro do div container e task-app]
+            {% endcomment %}
+            {% block content %} {% endblock content %} 
+        </div>
+    </div>
+
+{% include 'tarefas/partials/footer.html' %}

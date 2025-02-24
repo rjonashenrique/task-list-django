@@ -1,0 +1,34 @@
+{% extends "global/base.html" %}
+{% load static %}
+
+{% block title %}Detalhes{% endblock title %}
+
+{% block content %}
+<h2>Tarefa &nbsp<span>{{ task.id_task }}</span> <img src="{% static 'tarefas/img/lista-de-tarefas.png' %}" alt=""></h2>
+<div class="task-details">
+    <div class="task-item">
+        <strong>Título:</strong>
+        <p>{{ task.task_name }}</p>
+    </div>
+    <div class="task-item">
+        <strong>Descrição:</strong>
+        <p>{{ task.description }}</p>
+    </div>
+    <div class="task-item">
+        <strong>Prioridade:</strong>
+        <p>{{ task.priority }}</p>
+    </div>
+    <div class="task-item">
+        <strong>Tipo:</strong>
+        <p>{{ task.type }}</p>
+    </div>
+    <div class="task-item">
+        <strong>Data de Vencimento:</strong>
+        <p>{{ task.deadline }}</p>
+    </div>
+    <div class="task-item">
+        <strong>Autor:</strong>
+        <p>{{ task.author.first_name }} {{ task.author.last_name }}</p>
+    </div>
+</div>
+{% endblock content %}
