@@ -12,7 +12,7 @@
     </div>
     <ul id="task-list">
         {% for task in tasks  %}
-            <li><a href="{% url 'task-details' task.id_task %}">{{task.task_name}}</a></li>
+            <li><a href="{% url 'task-details' task.id_task %}">{{task.name}}</a></li>
         {% endfor %}
     </ul>
 {% endblock content %}

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from utils.tarefas.factory import make_task
-
+from .models import Task
 # Create your views here.
 # * Criando a view de home
 # * View = função que vai mostrar a visualização/visual da página
@@ -9,10 +9,11 @@ from utils.tarefas.factory import make_task
 def home(request):
     
     # * Retorna = Volta com uma resposta (response)
-    
+    Tasks = Task.objects.all()
+
     return render(request, 'tarefas/pages/index.html', 
                   context={
-                     'tasks' : [make_task() for _ in range(10)],
+                     'tasks' : Tasks,
                   })
 
 """

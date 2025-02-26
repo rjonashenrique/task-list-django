@@ -8,11 +8,16 @@ class Priority (models.Model):
     id_priority = models.AutoField(primary_key=True)
     #* CharField == Varchar(150)
     name = models.CharField(max_length=50)
-
+     
+    def __str__(self):
+        return self.name
+    
 class TaskType (models.Model):
     id_task_type = models.AutoField(primary_key=True)
     name = models.CharField(max_length=40)
-
+    def __str__(self):
+        return self.name
+    
 # ^ Agora faremos a entidade/tabela/model fraca
 # ^ Onde terá as chaves estrangeiras de priority e task_type
 class Task (models.Model):
@@ -26,3 +31,6 @@ class Task (models.Model):
     id_task_type = models.ForeignKey(TaskType, null=True, blank=True, on_delete=models.SET_NULL)
     
     author = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
+    
+    def __str__(self):
+        return self.name
