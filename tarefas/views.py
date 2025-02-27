@@ -25,7 +25,8 @@ def home(request):
 ^ Lá no .html usamos esse 'task' para mostrar CADA INFORMAÇÃO
 """
 def task_details(request, id):
+    task = Task.objects.filter(id_task=id).first()
     return render(request, 'tarefas/pages/task_details.html',
                   context={
-                      'task' : make_task(),
+                      'task' : task,
                   })
